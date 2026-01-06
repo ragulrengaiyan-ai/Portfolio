@@ -1,6 +1,7 @@
 window.onscroll = function () {
     updateProgressBar();
     animateCircles();
+    highlightNav();
 };
 
 function updateProgressBar() {
@@ -57,11 +58,25 @@ function animateCircle(skill) {
     }, 20);
 }
 
-// Hover effect for navigation
-const navLinks = document.querySelectorAll('.nav');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        navLinks.forEach(l => l.style.color = '');
-        e.target.style.color = '#6366f1';
+// Scroll spy for navigation
+function highlightNav() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav');
+
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
+        }
     });
-});
+
+    navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+}
