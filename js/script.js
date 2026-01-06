@@ -12,14 +12,14 @@ function updateProgressBar() {
 
 // Skills data
 const skills = [
-    { id: "progress-text1", circle: ".progress-ring__circle1", percent: 100 },
-    { id: "progress-text2", circle: ".progress-ring__circle2", percent: 100 },
-    { id: "progress-text3", circle: ".progress-ring__circle3", percent: 100 },
-    { id: "progress-text4", circle: ".progress-ring__circle4", percent: 100 },
-    { id: "progress-text5", circle: ".progress-ring__circle5", percent: 100 },
-    { id: "progress-text6", circle: ".progress-ring__circle6", percent: 100 },
-    { id: "progress-text7", circle: ".progress-ring__circle7", percent: 100 },
-    { id: "progress-text8", circle: ".progress-ring__circle8", percent: 100 }
+    { id: "progress-text1", circle: ".progress-ring__circle1", percent: 0 },
+    { id: "progress-text2", circle: ".progress-ring__circle2", percent: 0 },
+    { id: "progress-text3", circle: ".progress-ring__circle3", percent: 0 },
+    { id: "progress-text4", circle: ".progress-ring__circle4", percent: 0 },
+    { id: "progress-text5", circle: ".progress-ring__circle5", percent: 0 },
+    { id: "progress-text6", circle: ".progress-ring__circle6", percent: 0 },
+    { id: "progress-text7", circle: ".progress-ring__circle7", percent: 0 },
+    { id: "progress-text8", circle: ".progress-ring__circle8", percent: 0 }
 ];
 
 let animated = false;
