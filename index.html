@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Kaushan+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
 
     <!-- Navigation Bar -->
     <header>
@@ -31,7 +34,6 @@
             <ul>
                 <li><a href="#home" class="nav">Home</a></li>
                 <li><a href="#about" class="nav">About</a></li>
-                <li><a href="#education" class="nav">Education</a></li>
                 <li><a href="#skill" class="nav">Skills</a></li>
                 <li><a href="#works" class="nav">projects</a></li>
                 <li><a href="#contact" class="nav">Contact</a></li>
@@ -46,217 +48,302 @@
 
     <!-- Home -->
     <section id="home">
-        <div class="greet">
-            <P>HI!</P>
-            <p>I'm</p>
+        <div class="hero-image-container">
+            <img src="./assets/images/ragul.png" alt="Ragul Hero" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="home-content">
+            <div class="greet">
+                <P>HI! I'M</P>
 
-        </div>
-        <div class="name1">
-            <h1>RAGUL</h1>
-        </div>
-        <div class="desg">
-            <p>Full Stack Developer</p>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-        <h1>ABOUT:</h1>
-        <div class="content ">
-                <div class="image-container">
-                <img src="./assets/images/ragul%20portfolio%20photo.jpg" alt="Ragul" width="700px">
             </div>
-            <div id="shade"></div>
-            <p>I’m Ragul, a passionate software developer dedicated to building innovative solutions that make a
-                difference. My journey in technology is driven by curiosity and a desire to solve complex problems
-                through clean, efficient code. Beyond development, I enjoy exploring new technologies, contributing to
-                open-source projects, and constantly learning to stay ahead in the ever-evolving tech landscape.
-
-            </p>
+            <div class="name1">
+                <h1>RAGUL</h1>
+            </div>
+            <div class="desg">
+                <p>Full Stack Developing Student</p>
+            </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <section id="education">
-        <h1>EDUCATION:</h1>
-        <P>My educational foundation is built on a strong commitment to learning and growth. I have consistently pursued
-            excellence in my studies, focusing on computer science and technical skills. This academic journey has
-            equipped me with the logical thinking and technical proficiency required to excel as a developer. Currently,
-            I am expanding my expertise through specialized training and hands-on projects, preparing myself for the
-            challenges of professional software development.
-        </P>
+    <section id="about">
+        <h1 class="heading"> <span></span> </h1>
+
+        <div class="about-content-wrapper">
+
+            <div class="about-text-left animate-on-scroll slide-left">
+                <h3>I'm Ragul, a passionate software developing student dedicated to building innovative solutions.</h3>
+                <!-- <p>My journey in technology is driven by curiosity and a desire to solve complex problems through clean,
+                    efficient code.</p> -->
+            </div>
+
+            <div class="about-image animate-on-scroll zoom-in">
+                <img src="./assets/images/ragul.png" alt="Ragul">
+            </div>
+
+            <div class="about-text-right animate-on-scroll slide-right">
+                <p>I enjoy exploring new technologies and building projects. When I'm not coding, you'll find me
+                    watching <b>animes</b>, reading <b>comic books</b>, or <b>listening to my favorite songs</b>. </p>
+                <p>One of my biggest personal achievements is overcoming my <b>shyness</b>. When I first joined the
+                    academy, I was quite shy, but I've worked hard to overcome it and become more confident in my
+                    interactions and collaborations.</p>
+                <p>I'm constantly learning to more one step ahead at a time and looking for ways to
+                    grow both personally and professionally.</p>
+            </div>
+
+        </div>
+
     </section>
+
 
     <!-- Skills -->
     <section id="skill">
 
-        <h1>SKILLS:</h1>
-        <div class="skills">
+        <h1>SKILLS</h1>
 
-            <ul>
-                <li>
-                    <div class="title">HTML</div>
+        <div class="skills-scroll-container">
+            <div class="skills-scroll-track">
+                <!-- First set of skills -->
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="html" class="progress-circles">
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                        <div class="progress-container1">
-                            <svg class="progress-ring1" width="120" height="120">
-                                <circle class="progress-ring__circle1" stroke="#e34c26" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text1" id="progress-text1">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">CSS</div>
-                    <div id="css" class="progress-circles">
-                        <div class="progress-container2">
-                            <svg class="progress-ring2" width="120" height="120">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                                <circle class="progress-ring__circle2" stroke="#ffa500" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text2 text" id="progress-text2">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">JavaScript</div>
-                    <div id="js" class="progress-circles">
-                        <div class="progress-container3">
-                            <svg class="progress-ring3" width="120" height="120">
-                                <circle class="progress-ring__circle3" stroke="#35a854" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text3" id="progress-text3">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">ENGLISH</div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="english" class="progress-circles">
-                        <div class="progress-container4">
+                <div class="skill-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                            <svg class="progress-ring4" width="120" height="120">
-                                <circle class="progress-ring__circle4" stroke="#3b82f6" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text4" id="progress-text4">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">PYTHON</div>
+                <div class="skill-card">
+                    <i class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="python" class="progress-circles">
-                        <div class="progress-container5">
+                <!-- Duplicate set for seamless loop -->
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                            <svg class="progress-ring5" width="120" height="120">
-                                <circle class="progress-ring__circle5" stroke="#8d4e3c" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text5" id="progress-text5">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">SQL</div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="db" class="progress-circles">
-                        <div class="progress-container6">
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                            <svg class="progress-ring6" width="120" height="120">
-                                <circle class="progress-ring__circle6" stroke="#4B164C" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text6" id="progress-text6">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">LIFE SKILLS</div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="life" class="progress-circles">
-                        <div class="progress-container7">
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                            <svg class="progress-ring7" width="120" height="120">
-                                <circle class="progress-ring__circle7" stroke="#FCE7C8" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text7" id="progress-text7">0%</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="title">PROBLEM SOLVING</div>
+                <div class="skill-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                    <div id="problem" class="progress-circles">
-                        <div class="progress-container8">
+                <div class="skill-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>FastAPI</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
 
-                            <svg class="progress-ring8" width="120" height="120">
-                                <circle class="progress-ring__circle8" stroke="#6D2323" stroke-width="10"
-                                    fill="transparent" r="50" cx="60" cy="60" />
-                            </svg>
-                            <div class="progress-text8" id="progress-text8">0%</div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                <div class="skill-card">
+                    <i class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                    <div class="skill-percentage">50%</div>
+                </div>
+
+            </div>
         </div>
 
-
-
-
+        <div class="skills-extra-content animate-on-scroll slide-up">
+            <p>Always exploring new horizons in the world of technology. Dedicated to turning complex ideas into elegant digital solutions.</p>
+        </div>
 
     </section>
 
     <!-- achievements  -->
     <section id="works">
-        <h1> MY PROJECTS :</h1>
+        <h1> MY PROJECTS </h1>
 
-        <div class="works">
-            <div class="works-container">
-                <a href="https://ragulrengaiyan-ai.github.io/recipe-website/"><img src="./assets/images/food_recipes.png" alt="Recipe Website" target="_blank" style="max-width: 300px; height: auto;"></a>
-                <h3>Recipe Website</h3>
-                <p>A feature-rich recipe platform designed for food enthusiasts. Built with HTML and CSS, this application provides an intuitive interface for browsing and discovering recipes. The responsive design ensures seamless experience across all devices with clean code architecture.</p>
+        <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Previous Project">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="projectTrack">
+                    <!-- Project 1 -->
+                    <div class="carousel-slide">
+                        <div class="project-card project-left">
+                            <div class="project-image">
+                                <a href="https://ragulrengaiyan-ai.github.io/recipe-website/" target="_blank">
+                                    <img src="./assets/images/food_recipes.png" alt="Recipe Website">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Recipe Website</h3>
+                                <p class="project-desc">A feature-rich recipe platform designed for food enthusiasts.
+                                    Built with
+                                    HTML and CSS, this application provides an intuitive interface for browsing and
+                                    discovering
+                                    recipes. The responsive design ensures seamless experience across all devices with
+                                    clean code
+                                    architecture.</p>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span>Role</span>
+                                        <p>Frontend Developer</p>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>Tech Stack</span>
+                                        <p>HTML, CSS</p>
+                                    </div>
+                                </div>
+                                <a href="https://ragulrengaiyan-ai.github.io/recipe-website/" target="_blank"
+                                    class="view-project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="carousel-slide">
+                        <div class="project-card project-right">
+                            <div class="project-info">
+                                <h3>Service Provider Platform</h3>
+                                <p class="project-desc">A comprehensive service marketplace connecting service providers
+                                    with
+                                    customers. This platform enables users to browse services, book appointments, and
+                                    manage
+                                    payments seamlessly. Built with modern web technologies, it features user
+                                    authentication, secure
+                                    transactions, and a robust admin dashboard.</p>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span>Role</span>
+                                        <p>Full Stack Developer</p>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>Tech Stack</span>
+                                        <p>FastAPI, JS, SQL</p>
+                                    </div>
+                                </div>
+                                <a href="https://all-in-one-household-services.vercel.app/" target="_blank"
+                                    class="view-project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div class="project-image">
+                                <a href="https://all-in-one-household-services.vercel.app/" target="_blank">
+                                    <img src="./assets/images/All_in_one.png" alt="Service Provider Platform">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="works-container">
-                <a href="#"><img src="./assets/images/service_provider.png" alt="Service Provider Platform" target="_blank" style="max-width: 300px; height: auto;"></a>
-                <h3>Service Provider Platform</h3>
-                <p>A comprehensive service marketplace connecting service providers with customers. This platform enables users to browse services, book appointments, and manage payments seamlessly. Built with modern web technologies, it features user authentication, secure transactions, real-time notifications, and a robust admin dashboard for service management.</p>
+            <button class="carousel-btn next" aria-label="Next Project">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-nav" id="carouselNav">
+                <!-- Dots will be generated via JS -->
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact">
-        <h1>CONTACT:</h1>
-        <div class="contact-container">
-            <h2>Contact Me</h2>
-            <form id="contact-form"class="contact-form">
-                <label for="name">Name</label>
-                <input name="name" type="text" id="name" placeholder="Enter your name" required>
-
-                <label for="email">Email</label>
-                <input name="email" type="email" id="email" placeholder="Enter your email" required>
-
-                <label for="message">Message</label>
-                <textarea name="message" id="message" placeholder="Your message..." rows="5" required></textarea>
-
-
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+    <section id="contact" class="new-contact-section">
+        <div class="contact-bg-image">
+            <img src="./assets/images/ragul portfolio photo.jpg" alt="Background" class="bg-img">
+            <div class="contact-overlay"></div>
         </div>
-        <div class="social-links">
-            <a href="https://github.com/ragulrengaiyan-ai" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ragul-r-340750374/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
 
+        <div class="contact-content-new">
+            <h1 class="contact-headline">Let's Work Together</h1>
+
+            <div class="contact-divider"></div>
+
+            <div class="contact-details-row">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:ragulrengaiyan@gmail.com">ragulrengaiyan@gmail.com</a>
+                </div>
+                <!-- Vertical Divider -->
+                <div class="contact-vertical-line"></div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919344445585">+91 8122834911</a>
+                </div>
+
+                <!-- Vertical Divider -->
+                <div class="contact-vertical-line"></div>
+
+                <div class="contact-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <a href="./assets/resume.pdf" target="_blank">Resume</a>
+                </div>
+
+            </div>
+
+            <div class="social-section-new">
+                <p>You can also find me on</p>
+                <div class="social-icons-new">
+                    <a href="https://www.linkedin.com/in/ragul-r-340750374/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ragulrengaiyan-ai" target="_blank"><i class="fab fa-github"></i></a>
+
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Thanks for scrolling, you made it! 👊</p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-top-btn">
+                    Scroll to Top <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
         </div>
     </section>
+
 
 
     <script src="./js/script.js"></script>
