@@ -1,3 +1,17 @@
+// Utility: Throttle function to limit execution frequency
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
 // Project Carousel Logic
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('projectTrack');
@@ -50,20 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle window resize to ensure correct positioning
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', throttle(() => {
         updateCarousel(currentIndex);
-    });
+    }, 100));
 });
 
-window.onscroll = function () {
+// Optimized scroll handling
+window.onscroll = throttle(function () {
     updateProgressBar();
     highlightNav();
-};
+}, 20);
 
 function updateProgressBar() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (height <= 0) {
+        document.getElementById("myBar").style.width = "0%";
+        return;
+    }
     var scrolled = (winScroll / height) * 100;
+    // Ensure it doesn't exceed 100% or go below 0%
+    scrolled = Math.min(100, Math.max(0, scrolled));
     document.getElementById("myBar").style.width = scrolled + "%";
 }
 
@@ -73,39 +94,33 @@ function highlightNav() {
     const navLinks = document.querySelectorAll('.nav');
 
     let current = "";
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    const headerHeight = document.querySelector('header').offsetHeight;
 
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+        // Use a more precise offset (headerHeight + some buffer)
+        if (scrollPos >= sectionTop - (headerHeight + 50)) {
             current = section.getAttribute('id');
         }
     });
 
     navLinks.forEach((link) => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
+        const href = link.getAttribute('href').substring(1); // remove #
+        if (href === current) {
             link.classList.add('active');
         }
     });
 }
 
 
-
-// Global Glowing Comet Trail Effect
-document.addEventListener('mousemove', function (e) {
-    const x = e.pageX;
-    const y = e.pageY;
-
-    // Create trail particle globally
-    createTrailParticle(x, y);
-});
-
 // Local glow effect for skill cards
 function setupSkillCardGlow() {
     const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach(card => {
-        card.addEventListener('mousemove', function (e) {
+        card.addEventListener('mousemove', throttle(function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -113,14 +128,13 @@ function setupSkillCardGlow() {
             this.style.setProperty('--glow-x', `${x}px`);
             this.style.setProperty('--glow-y', `${y}px`);
             this.style.setProperty('--glow-opacity', '1');
-        });
+        }, 10));
 
         card.addEventListener('mouseleave', function () {
             this.style.setProperty('--glow-opacity', '0');
         });
     });
 }
-
 
 // Custom Cursor Logic
 const dot = document.querySelector('.cursor-dot');
@@ -154,37 +168,10 @@ interactiveElements.forEach(el => {
     });
 });
 
-function createTrailParticle(x, y) {
-    const particle = document.createElement('div');
-    particle.classList.add('trail-particle');
-    document.body.appendChild(particle);
 
-    // Random size for variety
-    const size = Math.random() * 8 + 5;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-
-    // Position vertically/horizontally
-    particle.style.left = `${x}px`;
-    particle.style.top = `${y}px`;
-
-    // Random slight offset to make it look like a spray/tail
-    const offset = (Math.random() - 0.5) * 15;
-    particle.style.left = `${x + offset}px`;
-    particle.style.top = `${y + offset}px`;
-
-    // Remove after animation
-    setTimeout(() => {
-        particle.remove();
-    }, 800);
-
-
-
-}
-
-// Scroll Animation Observer for Education Section
+// Scroll Animation Observer
 const observerOptions = {
-    threshold: 0.2
+    threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -196,12 +183,8 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Observe all animate-on-scroll elements
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
-
-    // Initialize skill card glow effects
     setupSkillCardGlow();
 });
 
