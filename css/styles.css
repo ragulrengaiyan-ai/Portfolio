@@ -492,8 +492,13 @@ section {
     grid-column: span 2;
 }
 
+.mern-card {
+    grid-column: 1 / -1;
+}
+
 .efset-card h3 i { color: #facc15; filter: drop-shadow(0 0 10px rgba(250,204,21,0.5)); }
 .product-card h3 i { color: #00f0ff; filter: drop-shadow(0 0 10px rgba(0,240,255,0.5)); }
+.mern-card h3 i { color: #ff00ff; filter: drop-shadow(0 0 10px rgba(255,0,255,0.5)); }
 
 .photo-placeholder {
     width: 100%;
@@ -594,7 +599,7 @@ section {
     .bento-grid {
         grid-template-columns: 1fr;
     }
-    .intro-card, .hobbies-card, .growth-card, .mindset-card, .efset-card, .product-card {
+    .intro-card, .hobbies-card, .growth-card, .mindset-card, .efset-card, .product-card, .mern-card {
         grid-column: 1 / -1;
         grid-row: auto;
     }
